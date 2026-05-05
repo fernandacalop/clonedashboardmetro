@@ -71,34 +71,61 @@ body {
 }
 
 .dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 150px 50px 50px 50px;
-    max-width: 1200px;
+    padding: 210px 50px 50px 50px;
+    max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+}
+
+.metro-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 350px;
+}
+
+.metro-col-small {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.card-small {
+    width: 200px;
+    flex: 1; /* divide a altura igualmente entre os dois */
+}
+
+.card-large {
+    flex: 1;
+    height: 100%;
+    min-width: 0;
 }
 
 .grid-item {
-    aspect-ratio: 1 / 1; /* Mantém quadrado */
-    border-radius: 8px;
+    border-radius: 0; /* Metro UI não tem bordas arredondadas */
     display: flex;
     align-items: flex-end;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     overflow: hidden;
     position: relative;
 }
 
 .grid-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    filter: brightness(1.15);
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+    z-index: 1;
 }
 
 .item-content {
-    padding: 20px;
+    padding: 14px 18px;
     width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
 }
 
 .item-content h3 {
@@ -106,5 +133,18 @@ body {
     font-weight: 300;
     color: white;
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: lowercase;
 }
+
+.carousel-wrap { position: relative; overflow: hidden; }
+.carousel-slides { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
+.carousel-slide { min-width: 100%; }
+.arrow-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.08); border: none; color: #fff;
+  font-size: 24px; padding: 20px 10px; cursor: pointer;
+}
+.arrow-btn.right { right: 0; }
+.arrow-btn.left { left: 0; }
