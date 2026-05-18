@@ -26,3 +26,21 @@ menuItems.forEach((item) => {
         goToSlide(index);
     });
 });
+
+const fotos = document.querySelectorAll('.card-foto');
+let fotoAtual = 0;
+
+setInterval(() => {
+    fotos[fotoAtual].classList.remove('active');
+    fotoAtual = (fotoAtual + 1) % fotos.length;
+    fotos[fotoAtual].classList.add('active');
+}, 3000);
+
+const fotos2 = document.querySelectorAll('.card-foto-2');
+let fotoAtual2 = 0;
+
+setInterval(() => {
+    fotos2[fotoAtual2].classList.remove('active');
+    fotoAtual2 = (fotoAtual2 + 1) % fotos2.length;
+    fotos2[fotoAtual2].classList.add('active');
+}, 2500); // tempo diferente do outro para não trocarem juntos

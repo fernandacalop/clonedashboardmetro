@@ -27,8 +27,8 @@ body {
 }
 
 .user-avatar {
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     object-fit: cover;
 }
 
@@ -126,6 +126,7 @@ body {
     padding: 14px 18px;
     width: 100%;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+    z-index: 1;
 }
 
 .item-content h3 {
@@ -135,16 +136,62 @@ body {
     margin: 0;
     font-size: 16px;
     letter-spacing: 0.5px;
-    text-transform: lowercase;
 }
 
 .carousel-wrap { position: relative; overflow: hidden; }
 .carousel-slides { display: flex; transition: transform 0.45s cubic-bezier(0.4,0,0.2,1); }
 .carousel-slide { min-width: 100%; }
 .arrow-btn {
-  position: absolute; top: 50%; transform: translateY(-50%);
+  position: absolute; top: 60%; transform: translateY(-50%);
   background: rgba(255,255,255,0.08); border: none; color: #fff;
   font-size: 24px; padding: 20px 10px; cursor: pointer;
 }
 .arrow-btn.right { right: 0; }
 .arrow-btn.left { left: 0; }
+
+.card-carousel {
+    position: absolute;
+    inset: 0;
+}
+
+.card-foto, .card-foto-2 {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.card-foto.active, .card-foto-2.active {
+    opacity: 1;
+}
+
+.social-container {
+    justify-content: flex-start; /* cards colados à esquerda */
+    align-items: flex-end; /* alinha tudo pela base */
+    padding-left: 150px;
+}
+
+.social-avatares {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    gap: 0;
+    height: 100%;
+}
+
+.xbox-avatar {
+    height: 380px;
+    width: auto;
+}
+
+.card-imagem-fixa {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
