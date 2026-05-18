@@ -7,17 +7,62 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Popup Quickplay -->
+<div class="popup-overlay" id="popupQuickplay" onclick="fecharPopup(event)">
+    <div class="popup-xbox">
+        <div class="popup-header">
+            <span class="popup-titulo">quickplay</span>
+            <span class="popup-fechar" onclick="document.getElementById('popupQuickplay').classList.remove('ativo')">✕</span>
+        </div>
+        <div class="popup-jogos">
+            <div class="popup-jogo">
+                <img src="img/forzahorizon.jpg" class="popup-jogo-icone">
+                <span>Forza Horizon</span>
+            </div>
+            <div class="popup-jogo">
+                <img src="img/legobatman.png" class="popup-jogo-icone">
+                <span>LEGO Batman</span>
+            </div>
+            <div class="popup-jogo">
+                <img src="img/injustice.png" class="popup-jogo-icone">
+                <span>Injustice</span>
+            </div>
+            <div class="popup-jogo">
+                <img src="img/marvelultimatealliance.webp" class="popup-jogo-icone">
+                <span>Marvel Ultimate Alliance 2</span>
+            </div>
+            <div class="popup-jogo">
+                <img src="img/gtav.jpg" class="popup-jogo-icone">
+                <span>GTA V</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Popup Mensagem -->
+<div class="popup-overlay" id="popupMensagem" onclick="fecharPopupMensagem(event)">
+    <div class="popup-xbox-mensagem">
+        <div class="popup-header">
+            <span class="popup-titulo">uma mensagem para você</span>
+            <span class="popup-fechar" onclick="document.getElementById('popupMensagem').classList.remove('ativo')">✕</span>
+        </div>
+        <div class="popup-mensagem-conteudo">
+            <p>primeiro paragrafo</p>
+            <p>segundo paragrafo</p>
+        </div>
+    </div>
+</div>
     <header class="top-header">
         <div class="user-info">
             <span class="username">crxnqvist</span>
-            <img src="megaesfiha.jpeg" alt="Foto do usuário" class="user-avatar">
+            <img src="img/megaesfiha.jpeg" alt="Foto do usuário" class="user-avatar">
         </div>
     </header>
     <header class="xbox-menu">
     <nav class="menu-nav">
         <div class="menu-item active" data-slide="0">home</div>
-        <div class="menu-item" data-slide="1">social</div>
+        <div class="menu-item" data-slide="1">mídias & lugares</div>
         <div class="menu-item" data-slide="2">music</div>
         <div class="menu-item" data-slide="3">uma mensagem para você</div>
     </nav>
@@ -30,15 +75,15 @@
         <div class="metro-container">
           <div class="metro-col-small">
             <div class="grid-item card-small">
-                <img src="opentray.png" class="card-imagem-fixa">
+                <img src="img/opentray.png" class="card-imagem-fixa">
                 <div class="item-content">
                     <h3>Open Tray</h3>
                 </div>
             </div>
-            <div class="grid-item card-small" id="card-quickplay">
+            <div class="grid-item card-small" id="card-quickplay" onclick="document.getElementById('popupQuickplay').classList.add('ativo')">
                 <div class="card-carousel">
-                    <img src="quickplay1.png" class="card-foto-2 active">
-                    <img src="quickplay2.png" class="card-foto-2">
+                    <img src="img/quickplay1.png" class="card-foto-2 active">
+                    <img src="img/quickplay2.png" class="card-foto-2">
                 </div>
                 <div class="item-content">
                     <h3>Quickplay</h3>
@@ -49,10 +94,10 @@
         <!-- Card grande central -->
         <div class="grid-item card-large" id="card-nos">
             <div class="card-carousel">
-                <img src="foto1.jpeg" class="card-foto active">
-                <img src="foto2.jpeg" class="card-foto">
-                <img src="foto3.jpeg" class="card-foto">
-                <img src="foto4.jpeg" class="card-foto">
+                <img src="img/foto1.jpeg" class="card-foto active">
+                <img src="img/foto2.jpeg" class="card-foto">
+                <img src="img/foto3.jpeg" class="card-foto">
+                <img src="img/foto4.jpeg" class="card-foto">
             </div>
             <div class="item-content">
                 <h3>top momentos mais ÉPICOS de teusobreira e fefacalop</h3>
@@ -61,12 +106,14 @@
 
         <!-- Coluna direita: 2 cards pequenos -->
         <div class="metro-col-small">
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            <div class="grid-item card-small">
+                <img src="img/xboxbasics.png" class="card-imagem-fixa">
                 <div class="item-content">
                     <h3>Xbox Basics</h3>
                 </div>
             </div>
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            <div class="grid-item card-small">
+                <img src="img/checkmynetwork.png" class="card-imagem-fixa">
                 <div class="item-content">
                     <h3>Check My Network</h3>
                 </div>
@@ -75,30 +122,67 @@
         </div>
       </div>
 
-      <!-- Slide 1: social -->
+      <!-- Slide 1: mídias & lugares -->
       <div class="carousel-slide">
         <div class="metro-container social-container">
 
           <div class="metro-col-small">
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            <a href="https://www.youtube.com/watch?v=oQUF0S0u8NE" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/boca.jpeg" class="card-imagem-fixa">
                 <div class="item-content">
-                    <h3>Friends</h3>
+                    <h3>sinhá boça completo</h3>
                 </div>
             </div>
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            </a>
+            <a href="https://www.cinesala.com.br/em-cartaz" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/cinesala.jpg" class="card-imagem-fixa">
                 <div class="item-content">
-                    <h3>Social Apps</h3>
+                    <h3>em cartaz no cinesala</h3>
                 </div>
             </div>
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            </a>
+            <a href="https://pedir.delivery/app/megaesfihajurema/menu" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/megaesfihajurema.jpg" class="card-imagem-fixa">
                 <div class="item-content">
-                    <h3>Sign In or Out</h3>
+                    <h3>cardápio mega esfiha</h3>
                 </div>
             </div>
+            </a>
             </div>
+
+            <div class="metro-col-small">
+                <a href="https://www.sescsp.org.br/unidades/belenzinho/" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/sescbelenzinho.jpeg" class="card-imagem-fixa">
+                <div class="item-content">
+                    <h3>programação sesc belenzinho</h3>
+                </div>
+            </div>
+            </a>
+                <a href="https://www.youtube.com/watch?v=qYPW3O6VhXo" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/dalecooper.avif" class="card-imagem-fixa">
+                <div class="item-content">
+                    <h3>everyday, once a day, give yourself a present</h3>
+                </div>
+            </div>
+            </a>
+                <a href="https://www.youtube.com/watch?v=EVfGZImxJFk" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/bixamuda.png" class="card-imagem-fixa">
+                <div class="item-content">
+                    <h3>entrevista bixa muda</h3>
+                </div>
+            </div>
+            </a>
+            </div>
+
             <div class="social-avatares">
-                <img src="avatarmateus.png" class="xbox-avatar">
-                <img src="avatarfernanda.png" class="xbox-avatar">
+                <img src="img/avatarmateus.png" class="xbox-avatar">
+                <img src="img/avatarfernanda.png" class="xbox-avatar">
             </div>
         </div>
       </div>
@@ -107,33 +191,41 @@
       <div class="carousel-slide">
         <div class="metro-container">
           <div class="metro-col-small">
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            <a href="https://open.spotify.com/playlist/1daBg2ZLj3tW9HgVnG1G0E?si=33af1204c6c84e8b" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/nossas.png" class="card-imagem-fixa">
                 <div class="item-content">
-                    <h3>jogos</h3>
+                    <h3>nossas de amor</h3>
                 </div>
             </div>
-            <div class="grid-item card-small" style="background-color: #1e7a1e;">
+            </a>
+            <a href="https://open.spotify.com/playlist/60o6rBNEV9XOpLZ2QcG4G4?si=fd11fb2c181c4437" target="_blank" class="card-link">
+                <div class="grid-item card-small">
+                <img src="img/lupedelupe.png" class="card-imagem-fixa">
                 <div class="item-content">
-                    <h3>conquistas</h3>
+                    <h3>setlist lupe de lupe 26/07/25</h3>
                 </div>
             </div>
+            </a>
         </div>
-
         <!-- Card grande central -->
-        <div class="grid-item card-large" style="background-color: #107c10;">
+         <a href="https://open.spotify.com/playlist/0TumL8jiBN6H65g0zSxFv7?si=dc9a711f0c1d45a9" target="_blank" class="card-link">
+            <div class="grid-item card-large">
+            <img src="img/definitivemix.png" class="card-imagem-fixa">
             <div class="item-content">
-                <h3>em destaque</h3>
+                <h3>teusobreira and fefacalop definitive mix</h3>
             </div>
         </div>
+         </a>
         </div>
       </div>
 
       <!-- Slide 3: uma mensagem para vc -->
       <div class="carousel-slide">
-        <div class="metro-container">
-          <div class="grid-item card-small" style="background-color: #1e7a1e;">
+        <div class="metro-container mensagem-container">
+          <div class="grid-item card-smal card-mensagem" style="background-color: #1e7a1e; width: 200px;" onclick="document.getElementById('popupMensagem').classList.add('ativo')">
                 <div class="item-content">
-                    <h3>mensagemmmmmm</h3>
+                    <h3>clica aqui!</h3>
                 </div>
             </div>
         </div>

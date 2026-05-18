@@ -43,4 +43,16 @@ setInterval(() => {
     fotos2[fotoAtual2].classList.remove('active');
     fotoAtual2 = (fotoAtual2 + 1) % fotos2.length;
     fotos2[fotoAtual2].classList.add('active');
-}, 2500); // tempo diferente do outro para não trocarem juntos
+}, 2500);
+
+function fecharPopup(event) {
+    if (event.target === document.getElementById('popupQuickplay')) {
+        document.getElementById('popupQuickplay').classList.remove('ativo');
+    }
+}
+
+function fecharPopupMensagem(event) {
+    if (event.target === document.getElementById('popupMensagem')) {
+        document.getElementById('popupMensagem').classList.remove('ativo');
+    }
+}
